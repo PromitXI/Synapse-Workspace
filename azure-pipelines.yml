@@ -1,0 +1,26 @@
+#Synapse Deployment Pipeline
+#Using GitHub Workspace_Publish Branch as the Repository
+#Directly Deploy the ARM Templates based on the Variables
+#Using Synapse Workspace Deployment as the 
+
+trigger:
+- workspace_publish
+
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  
+- task: Synapse workspace deployment@2
+  inputs:
+    operation: 'validateDeploy'
+    ArtifactsFolder: 'synapse-dev-westus3'
+    azureSubscription: 'Promit''s Cloud (58a3cb06-91b3-4f09-82b8-882ec0a9c038)'
+    ResourceGroupName: 'RG-SynapseW-QA-WestUS3'
+    TargetWorkspaceName: 'synapse-qa-westus3'
+    DeleteArtifactsNotInTemplate: false
+    DeployManagedPrivateEndpoints: false
+    FailOnMissingOverrides: false
+    Environment: 'prod'
+    npmpackage: 'prod'
