@@ -5,6 +5,8 @@
 
 trigger:
 - workspace_publish
+variables:
+  system.debug: true
 
 
 pool:
