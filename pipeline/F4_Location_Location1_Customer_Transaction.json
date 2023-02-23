@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "L0_Location",
+				"name": "L0_LocationAB",
 				"type": "ExecutePipeline",
 				"dependsOn": [],
 				"userProperties": [],
@@ -20,7 +20,7 @@
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
-						"activity": "L0_Location",
+						"activity": "L0_LocationAB",
 						"dependencyConditions": [
 							"Succeeded"
 						]
